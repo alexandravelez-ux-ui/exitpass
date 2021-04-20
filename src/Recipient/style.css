@@ -57,16 +57,12 @@
 
 .sidebarContainer {
   display: flex;
-  width: 33vw; 
+  width: 33vw;
   flex-direction: column;
   background: #fafaff;
   box-shadow: 0px 5px 4px 0px rgba(35, 31, 32, 0.5);
   z-index: 1;
-  transition: width 1s;
-}
-
-.sidebarContainer.closed {
-  width: 0;
+  opacity: 1; 
 }
 
 .sidebarContainerChild {
@@ -165,19 +161,20 @@
   display: none;
 }
 
-@media (min-width: 1300px) {
-  .sidebarContainer {
-  }
-}
-
 @media (max-width: 1300px) {
   .sidebarContainer {
     position: fixed;
-  }
-  .hidden {
-    display: none;
+    transition: all .5s;
   }
 
+  .sidebarContainer.closed {
+    width: 0;
+    opacity: 0;
+  }
+  .sidebarContainer.opened {
+    opacity: 1; 
+    width: 45vw; 
+  }
   .hamburgerMenu {
     display: block;
     width: 32px;
@@ -236,6 +233,57 @@
   bottom: 0;
 }
 
+@keyframes line1Animation {
+  50% {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+  }
+}
+
+@keyframes line3AnimationClosed {
+  0% {
+    transform: rotate(-45deg) translateY(50%);
+    bottom: 50%;
+  }
+  50% {
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+
+@keyframes line2AnimationClosed {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1; 
+  }
+}
+
+@keyframes line1AnimationClosed {
+  0% {
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+  }
+  50% {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 0%;
+  }
+}
+
 .isOpen .line1 {
   animation: 1s line1Animation forwards;
 }
@@ -248,6 +296,18 @@
   animation: 1s line3Animation forwards;
 }
 
+.isClosed .line1 {
+  animation: 1s line1AnimationClosed forwards;
+}
+
+.isClosed .line2 {
+  animation: 1s line2AnimationClosed forwards;
+}
+
+.isClosed .line3 {
+  animation: 1s line3AnimationClosed forwards;
+}
+
 .line {
   position: absolute;
   width: 100%;
@@ -257,3 +317,4 @@
   margin: 0;
   right: 0;
 }
+

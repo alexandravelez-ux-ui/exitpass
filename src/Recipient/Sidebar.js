@@ -7,6 +7,7 @@ import classSet from "react-classset";
 export default function Sidebar(props) {
   const [isOpen, setIsOpen] = useState(false);
   const containerClassSet = classSet({
+    opened: isOpen,
     sidebarContainer: true,
     "font-weight-bold": true,
     closed: !isOpen, 
@@ -15,7 +16,7 @@ export default function Sidebar(props) {
     <div>
       <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className={containerClassSet}>
-        <div className={isOpen ? "sidebarContent" : "hidden sidebarContent"}>
+        <div className="sidebarContent">
           <img className="logo" src="https://i.imgur.com/o9Py1iT.png" />
           {Object.entries(props.categories).map(([table, name]) => (
             <div
