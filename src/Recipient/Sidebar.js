@@ -13,7 +13,7 @@ export default function Sidebar(props) {
     closed: !isOpen, 
   })
   return (
-    <div>
+    <div className="sidebar">
       <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className={containerClassSet}>
         <div className="sidebarContent">
