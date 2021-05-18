@@ -1,22 +1,38 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import Recipient from "./Recipient";
-import { ChakraProvider } from "@chakra-ui/react"
+import Home from "./Home";
+import { ChakraProvider, extendTheme} from "@chakra-ui/react"
+import {
+  BrowserRouter as Router, Switch, Route
+} from "react-router-dom";
 
-const theme = extendTheme ({
+const theme = extendTheme({
   colors: {
-    red: "",
-    brightRed: "",
-    white: "#fff"
+    red: "#AE2735",
+    redOrange: "#E03C41",
+    darkPink: "#E24170",
+    lightPink:"#EA7195",
+    white: "#fff",
+    grayDisabled: "#DCE0E5"
   }
 }) 
 
 export default function App() {
   return (
     <ChakraProvider>
-      <div className="jost-font">
-        <Recipient />
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/recipient">
+            <div className="jost-font">
+              <Recipient />
+            </div>
+          </Route>
+          <Route path="/">
+            <Home/>
+          </Route>
+        </Switch>
+      </Router>
     </ChakraProvider>
   );
 }
