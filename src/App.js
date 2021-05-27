@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import Recipient from "./Recipient";
 import Home from "./Home";
+import CreateAccount from "./CreateAccount";
 import { ChakraProvider, extendTheme} from "@chakra-ui/react"
 import {
   BrowserRouter as Router, Switch, Route
@@ -32,6 +33,9 @@ export default function App() {
           </Route>
           <Route path="/">
             <Home/>
+          </Route>
+          <Route path="/createAccount">
+            <CreateAccount/>
           </Route>
         </Switch>
       </Router>
