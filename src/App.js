@@ -31,7 +31,7 @@ export default function App() {
               <Recipient />
             </div>
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home/>
           </Route>
           <Route path="/createAccount">
