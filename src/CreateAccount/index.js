@@ -1,5 +1,5 @@
 import react from "react" 
-import { Flex, Circle, Image, Text, Button, Input, chakra} from "@chakra-ui/react"
+import { Flex, Circle, Image, Text, Button, Input, InputGroup, InputLeftElement, chakra} from "@chakra-ui/react"
 import { PhoneIcon, AddIcon, WarningIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 import helpURL from './help.png'
 import keyboardURL from './keyboard.png'
@@ -18,17 +18,33 @@ import sunsetMask from './sunsetMask.svg'
 export default function () {
     return (
         <Flex fontFamily="Jost" align="center" direction="column">
-            <object data={sunsetMask} type="image/svg+xml"></object>
-            <Image clipPath="url(#sunset)"/>
+            <Image objectPosition="right top" objectFit="none" src={sunset} clipPath="inset(-40px -20px 0px -20px round 70px)"/>
             <Flex align="left" justify="space-around" minHeight="100vh" minWidth="700px" direction="column">
                 <ChevronLeftIcon/>
                 <Text>Add New Account</Text>
                 <Text>Website</Text>
-                <Input placeholder="www.spotify.com"/>
-                <Text>Email Address / User Name</Text>
-                <Input placeholder="jenniferwise@gmail.com"/>
+                <InputGroup>
+                    <InputLeftElement
+                        children={
+                            <Image src="website.png"/>
+                        }
+                    />
+                    <Input placeholder="www.spotify.com"/>
+                </InputGroup>
+                    <Text>Email Address / User Name</Text>
+                <InputGroup>
+                    <InputLeftElement
+                        children={}
+                    />
+                    <Input placeholder="jenniferwise@gmail.com"/>
+                </InputGroup>
                 <Text>Password / Pin</Text>
-                <Input placeholder="*********"/>
+                <InputGroup>
+                    <InputLeftElement
+                        children={}
+                    />
+                    <Input placeholder="*********"/>
+                </InputGroup>
                 <Text>Selecet Category of Account</Text>
                 <Flex width="100%" justify="space-between" direction="row">
                     <Image src={mail2URL}/> 
