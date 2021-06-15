@@ -26,7 +26,7 @@ export default function () {
                 <InputGroup>
                     <InputLeftElement
                         children={
-                            <Image src="website.png"/>
+                            <Image src={websiteURL}/>
                         }
                     />
                     <Input placeholder="www.spotify.com"/>
@@ -34,25 +34,30 @@ export default function () {
                     <Text>Email Address / User Name</Text>
                 <InputGroup>
                     <InputLeftElement
-                        children={}
+                        children={
+                            <Image src={mailURL}/>
+                        }
                     />
                     <Input placeholder="jenniferwise@gmail.com"/>
                 </InputGroup>
                 <Text>Password / Pin</Text>
                 <InputGroup>
                     <InputLeftElement
-                        children={}
+                        children={
+                            <Image src={keyboardURL}/>
+                        }
                     />
                     <Input placeholder="*********"/>
                 </InputGroup>
                 <Text>Selecet Category of Account</Text>
                 <Flex width="100%" justify="space-between" direction="row">
-                    <Image src={mail2URL}/> 
-                    <Image src={talkURL}/>
-                    <Image src={videoURL}/>
-                    <Image src={meetingURL}/>
+                    {
+                        [
+                           mail2URL, talkURL, videoURL, meetingURL
+                        ].map(url => <Circle size="56px" bg="white" filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))"><Image src={url}/></Circle>) 
+                    }
                 </Flex>
-                <Button>Save Details</Button>
+                <Button color="#fff" _hover={{bg:"#AE2735"}} bg="#AE2735" height="56px" borderRadius="28px" filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))">Save Details</Button>
             </Flex>
             <Flex background="gray" width="100%" align="center" direction="column">
                 <Flex justify="space-between" minWidth="700px" direction="row">
