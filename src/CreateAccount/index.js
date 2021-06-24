@@ -15,6 +15,43 @@ import willURL from './will.png'
 import sunset from './sunset.jpg'
 import sunsetMask from './sunsetMask.svg'
 
+const accountCategories = [
+    {
+        url: mail2URL,
+        name: "Email",
+    },
+    {
+        url: talkURL,
+        name: "Social",
+    },
+    {
+        url: videoURL,
+        name: "Bank",
+    },
+    {
+        url: meetingURL,
+        name: "Shop",
+    }
+]
+
+const footerLabels = [ 
+    {
+        url: willURL,
+        name: "Will",
+    },
+    {
+        url: settingsURL,
+        name: "Settings",
+    },
+    {
+        url:  helpURL, 
+        name: "Help",
+    },
+    {
+        url: subscriptionURL,
+        name: "Subscription",
+    }
+]
 export default function () {
     return (
         <Flex fontFamily="Jost" align="center" direction="column">
@@ -52,19 +89,29 @@ export default function () {
                 <Text mt="32px" fontSize="16px" fontWeight="medium">Select Category of Account</Text>
                 <Flex mt="16px" width="100%" justify="space-between" direction="row">
                     {
-                        [
-                           mail2URL, talkURL, videoURL, meetingURL
-                        ].map(url => <Circle size="56px" bg="white" filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))"><Image src={url}/></Circle>) 
+                        accountCategories.map(({url, name}) => 
+                            <Flex align="center" direction="column">
+                                <Circle size="56px" bg="white" filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))">
+                                    <Image src={url}/>
+                                </Circle> 
+                                <Text mt="8px" fontSize="12px" fontWeight="medium">
+                                    {name}
+                                </Text>
+                            </Flex>)
                     }
                 </Flex>
                 <Button mt="32px" color="#fff" _hover={{bg:"#AE2735"}} bg="#AE2735" height="56px" borderRadius="28px" filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))">Save Details</Button>
             </Flex>
-            <Flex background="gray" width="100%" align="center" direction="column">
+            <Flex background="#F8F7FB" width="100%" align="center" direction="column">
                 <Flex justify="space-between" minWidth="700px" direction="row">
-                    {
-                        [
-                            willURL, settingsURL, helpURL, subscriptionURL
-                        ].map(url => <Image h="32px" margin="10px" src={url}/> ) 
+                    {   
+                        footerLabels.map(({url, name}) => 
+                            <Flex align="center" direction="column">
+                                <Image h="42px" margin="10px" src={url}/>
+                                <Text fontSize="12px" fontWeight="medium">
+                                    {name}
+                                </Text>
+                            </Flex>)
                     }
                 </Flex>
             </Flex>
