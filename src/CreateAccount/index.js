@@ -54,19 +54,19 @@ const footerLabels = [
 ]
 export default function () {
     return (
-        <Flex fontFamily="Jost" align="center" direction="column">
+        <Flex fontFamily="Jost" minHeight="100vh" align="center" direction="column">
             <Image h="15vh" w="100vw" objectPosition="top right" objectFit="cover" src={sunset} clipPath="inset(-40px -20px 0px -20px round 70px)"/>
-            <Flex align="left" minHeight="100vh" minWidth="400px" direction="column">
+            <Flex align="left" minWidth="400px" direction="column">
                 <ChevronLeftIcon color="#707070" viewBox="8 0 20 20" mt="40px" fontSize="32px"/> 
                 <Text mt="16px" fontSize="24px" fontWeight="bold">Add New Account</Text>
                 <Text mt="32px" mb="6px" fontSize="16px" fontWeight="medium">Website</Text>
-                <InputGroup variant="filled" bg="#F8F7FB" size="lg"> 
+                <InputGroup variant="filled" size="lg"> 
                     <InputLeftElement
                         children={
                             <Image src={websiteURL}/>
                         }
                     />
-                    <Input _focus={{bg:"white", borderColor:"#93CFCA"}} _placeholder={{ color: "rgba(22, 4, 25, 0.64)"}} placeholder="www.spotify.com"/>
+                    <Input bg="rgb(248, 247, 251)" _focus={{bg:"white", borderColor:"#93CFCA"}} _placeholder={{ color: "rgba(22, 4, 25, 0.64)"}} placeholder="www.spotify.com"/>
                 </InputGroup>
                 <Text mt="32px" mb="6px" fontSize="16px" fontWeight="medium">Email Address / User Name</Text>
                 <InputGroup bg="#F8F7FB" size="lg">
@@ -75,7 +75,7 @@ export default function () {
                             <Image src={mailURL}/>
                         }
                     />
-                    <Input variant="filled" _focus={{bg:"white", borderColor:"#93CFCA"}} color="#fff" _placeholder={{ color: "rgba(22, 4, 25, 0.64)"}} placeholder="jenniferwise@gmail.com"/>
+                    <Input bg="rgb(248, 247, 251)" variant="filled" _focus={{bg:"white", borderColor:"#93CFCA"}} color="#fff" _placeholder={{ color: "rgba(22, 4, 25, 0.64)"}} placeholder="jenniferwise@gmail.com"/>
                 </InputGroup>
                 <Text mt="32px" mb="6px" fontSize="16px" fontWeight="medium">Password / Pin</Text>
                 <InputGroup variant="filled" bg="#F8F7FB" size="lg">
@@ -84,7 +84,7 @@ export default function () {
                             <Image src={keyboardURL}/>
                         }
                     />
-                    <Input _focus={{bg:"white", borderColor:"#93CFCA"}} _placeholder={{ color: "rgba(22, 4, 25, 0.64)"}} placeholder="*********"/>
+                    <Input bg="rgb(248, 247, 251)" _focus={{bg:"white", borderColor:"#93CFCA"}} _placeholder={{ color: "rgba(22, 4, 25, 0.64)"}} placeholder="*********"/>
                 </InputGroup>
                 <Text mt="32px" fontSize="16px" fontWeight="medium">Select Category of Account</Text>
                 <Flex mt="16px" width="100%" justify="space-between" direction="row">
@@ -100,15 +100,15 @@ export default function () {
                             </Flex>)
                     }
                 </Flex>
-                <Button mt="32px" color="#fff" _hover={{bg:"#AE2735"}} bg="#AE2735" height="56px" borderRadius="28px" filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))">Save Details</Button>
+                <Button mt="32px" color="#fff" _hover={{bg:"#AE2735"}} bg="#AE2735" height="56px" borderRadius="28px" filter="drop-shadow(0 6px 6px rgba(0, 0, 0, 0.30))">Save Details</Button>
             </Flex>
-            <Flex background="#F8F7FB" width="100%" align="center" direction="column">
-                <Flex justify="space-between" minWidth="700px" direction="row">
+            <Flex mt="40px" background="#F8F7FB" width="100%" align="center" direction="column">
+                <Flex justify="space-between" m="16px" minWidth="400px" direction="row">
                     {   
                         footerLabels.map(({url, name}) => 
                             <Flex align="center" direction="column">
-                                <Image h="42px" margin="10px" src={url}/>
-                                <Text fontSize="12px" fontWeight="medium">
+                                <Image h="42px" src={url}/>
+                                <Text fontSize="16px" fontWeight="medium">
                                     {name}
                                 </Text>
                             </Flex>)
