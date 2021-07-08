@@ -6,7 +6,7 @@ import keyboardURL from './keyboard.png'
 import mail2URL from './mail2.png'
 import mailURL from './mail.png'
 import meetingURL from './meeting.png'
-import settingsURL from './settings.png'
+import settingsURL from './settings-gear.png'
 import subscriptionURL from './subscription.png'
 import talkURL from './talk.png'
 import videoURL from './video.png'
@@ -107,7 +107,7 @@ export default function () {
                     {   
                         footerLabels.map(({url, name}) => 
                             <Flex align="center" direction="column">
-                                <Image h="42px" src={url}/>
+                                <Image _hover={{filter: "saturate(15)"}} h="42px" src={url}/>
                                 <Text fontSize="16px" fontWeight="medium">
                                     {name}
                                 </Text>
