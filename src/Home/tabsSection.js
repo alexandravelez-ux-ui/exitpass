@@ -20,8 +20,8 @@ export default function () {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   return (
     <Flex
-      height="30vh"
-      background="gray"
+      height="40vh"
+      background="main.darkRed"
       direction="row"
       width="60vw"
       marginTop="80px"
@@ -30,7 +30,7 @@ export default function () {
       <Flex flex="1" direction="column" justify="space-between" color="white">
         <Box
           onMouseOver={() => setCurrentImageIndex(0)}
-          background="blue"
+          _hover={{ bg: "main.purple" }}
           width="80%"
           padding="5px"
         >
@@ -48,7 +48,7 @@ export default function () {
         </Box>
         <Box
           onMouseOver={() => setCurrentImageIndex(1)}
-          background="blue"
+          _hover={{ bg: "main.purple" }}
           width="80%"
           padding="5px"
         >
@@ -66,7 +66,7 @@ export default function () {
         </Box>
         <Box
           onMouseOver={() => setCurrentImageIndex(2)}
-          background="blue"
+          _hover={{ bg: "main.purple" }}
           width="80%"
           padding="5px"
         >
@@ -81,7 +81,7 @@ export default function () {
         </Box>
         <Box
           onMouseOver={() => setCurrentImageIndex(3)}
-          background="blue"
+          _hover={{ bg: "main.purple" }}
           width="80%"
           padding="5px"
         >
