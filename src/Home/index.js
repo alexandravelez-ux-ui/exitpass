@@ -23,7 +23,7 @@ export default function () {
       <Flex direction="row" width="60vw" marginTop="80px">
         <Image flex="1" background="gray" />
         <Flex flex="1" direction="column" justify="center" marginLeft="75px">
-          <Text>What is ExitPass</Text>
+          <Text textStyle="h1">What is ExitPass</Text>
           <Text marginTop="32px">
             Exitpass is a tool for preserving your digital accounts for your
             chosen beneficiaries after death. We ensure that your digital
@@ -38,7 +38,7 @@ export default function () {
         alignItems="center"
         marginTop="80px"
       >
-        <Text>How ExitPass Works</Text>
+        <Text textStyle="h1">How ExitPass Works</Text>
         <Flex flex="1" direction="row" justify="space-between">
           <Flex
             direction="column"
@@ -103,7 +103,7 @@ export default function () {
             >
               3
             </Text>
-            <Text>
+            <Text textStyle="body">
               They will be invited to create a beneficiary account where they
               will be able to access the account data after your death.
             </Text>

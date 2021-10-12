@@ -26,13 +26,15 @@ export default function () {
       width="60vw"
       marginTop="80px"
       padding="32px"
+      borderRadius="md"
+      // onMouseOut={() => setCurrentImageIndex(undefined)}
     >
       <Flex flex="1" direction="column" justify="space-between" color="white">
         <Box
           onMouseOver={() => setCurrentImageIndex(0)}
-          _hover={{ bg: "main.purple" }}
+          _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
           width="80%"
-          padding="5px"
+          padding="16px"
         >
           <Text fontSize="24px" fontWeight="bold">
             Security
@@ -48,9 +50,9 @@ export default function () {
         </Box>
         <Box
           onMouseOver={() => setCurrentImageIndex(1)}
-          _hover={{ bg: "main.purple" }}
+          _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
           width="80%"
-          padding="5px"
+          padding="16px"
         >
           <Text fontSize="24px" fontWeight="bold">
             Flexibility
@@ -66,9 +68,9 @@ export default function () {
         </Box>
         <Box
           onMouseOver={() => setCurrentImageIndex(2)}
-          _hover={{ bg: "main.purple" }}
+          _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
           width="80%"
-          padding="5px"
+          padding="16px"
         >
           <Text fontSize="24px" fontWeight="bold">
             Intention
@@ -81,9 +83,9 @@ export default function () {
         </Box>
         <Box
           onMouseOver={() => setCurrentImageIndex(3)}
-          _hover={{ bg: "main.purple" }}
+          _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
           width="80%"
-          padding="5px"
+          padding="16px"
         >
           <Text fontSize="24px" fontWeight="bold">
             Confidence
@@ -98,7 +100,12 @@ export default function () {
           )}
         </Box>
       </Flex>
-      <Image src={images[currentImageIndex]} />
+      <Image
+        src={images[currentImageIndex]}
+        borderRadius="md"
+        boxShadow="xl"
+        margin="16px"
+      />
     </Flex>
   );
 }

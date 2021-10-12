@@ -19,6 +19,20 @@ const theme = extendTheme({
       purple: "#601659",
     },
   },
+  fonts: {
+    heading: "",
+    body: "",
+  },
+  textStyles: {
+    h1: {
+      fontSize: ["48px"],
+      fontWeight: "normal",
+    },
+    body: {
+      fontSize: "16px",
+      fontWeight: "normal",
+    },
+  },
 });
 
 export default function App() {
