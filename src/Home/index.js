@@ -10,6 +10,8 @@ import {
 } from "@chakra-ui/react";
 import TabSection from "./tabsSection";
 import Header from "../Header";
+import trust from "./home-image.jpg";
+
 export default function () {
   return (
     <Flex
@@ -19,12 +21,20 @@ export default function () {
       minHeight="100vh"
       direction="column"
     >
-      <Header />
-      <Flex direction="row" width="60vw" marginTop="80px">
-        <Image flex="1" background="gray" />
+      <Header height="50px" margin="3vh 0" />
+      <Flex direction="row" width="60vw" marginTop="100px">
+        <Image
+          src={trust}
+          flex="1"
+          background="gray"
+          boxSize="50%"
+          objectFit="contain"
+          borderRadius="md"
+          boxShadow="xl"
+        />
         <Flex flex="1" direction="column" justify="center" marginLeft="75px">
           <Text textStyle="h1">What is ExitPass</Text>
-          <Text marginTop="32px">
+          <Text marginTop="32px" textStyle="body">
             Exitpass is a tool for preserving your digital accounts for your
             chosen beneficiaries after death. We ensure that your digital
             identity is passed on to people you trust.
@@ -36,7 +46,7 @@ export default function () {
         direction="column"
         width="60vw"
         alignItems="center"
-        marginTop="80px"
+        marginTop="100px"
       >
         <Text textStyle="h1">How ExitPass Works</Text>
         <Flex flex="1" direction="row" justify="space-between">
@@ -49,15 +59,10 @@ export default function () {
             padding="16px"
             align="center"
           >
-            <Text
-              fontSize="40px"
-              lineHeight="40px"
-              marginBottom="24px"
-              borderBottom="1px"
-            >
+            <Text marginBottom="24px" borderBottom="1px" textStyle="h2">
               1
             </Text>
-            <Text>
+            <Text textStyle="body">
               When using ExitPass, you enter your online account details just
               like a password manager and then specify how you want the account
               handled in the event of your death.
@@ -72,15 +77,10 @@ export default function () {
             padding="16px"
             align="center"
           >
-            <Text
-              fontSize="40px"
-              lineHeight="40px"
-              borderBottom="1px"
-              marginBottom="24px"
-            >
+            <Text borderBottom="1px" marginBottom="24px" textStyle="h2">
               2
             </Text>
-            <Text>
+            <Text textStyle="body">
               You then specify who will be able to access the account to carry
               out these wishes.
             </Text>
@@ -95,12 +95,7 @@ export default function () {
             align="center"
             marginBottom="24px"
           >
-            <Text
-              fontSize="40px"
-              lineHeight="40px"
-              borderBottom="1px"
-              marginBottom="24px"
-            >
+            <Text borderBottom="1px" marginBottom="24px" textStyle="h2">
               3
             </Text>
             <Text textStyle="body">
@@ -113,35 +108,34 @@ export default function () {
       <Flex
         height="15vh"
         direction="row"
-        width="42vw"
-        marginTop="80px"
+        width="60vw"
+        marginTop="100px"
         align="center"
         justify="space-between"
         marginBottom="24px"
+        backgroundColor="main.purple"
+        padding="32px 7vw"
+        color="white"
+        borderRadius="md"
+        boxShadow="xl"
       >
-        <Box>
-          <Text
-            textAlign="left"
-            fontFamily="Arial"
-            fontSize="24px"
-            fontWeight="bold"
-            marginBottom="4px"
-          >
+        <Box width="28vw">
+          <Text textAlign="left" marginBottom="4px" textStyle="h2">
             Start Your Account in Minutes
           </Text>
-          <Text textAlign="left">
+          <Text textAlign="left" textStyle="body">
             With just a few clicks you can create your digital will for your
             online accounts.
           </Text>
         </Box>
         <Button
           boxShadow="2px 2px 2px 1px rgba(0, 0, 0, 0.2);"
-          padding="16px"
+          padding="32px"
           bg="main.darkRed"
           color="white"
-          _hover={{ bg: "main.purple" }}
+          _hover={{ bg: "main.darkPink" }}
         >
-          <Text fontWeight="bold"> Get Started</Text>
+          <Text textStyle="h2"> Get Started</Text>
         </Button>
       </Flex>
     </Flex>

@@ -25,12 +25,20 @@ const theme = extendTheme({
   },
   textStyles: {
     h1: {
-      fontSize: ["48px"],
-      fontWeight: "normal",
+      fontSize: ["38px"],
+      fontWeight: "semibold",
+    },
+    h2: {
+      fontSize: ["28px"],
+      fontWeight: "semibold",
     },
     body: {
-      fontSize: "16px",
+      fontSize: "21px",
       fontWeight: "normal",
+    },
+    nav: {
+      fontSize: "21px",
+      fontWeight: "semibold",
     },
   },
 });

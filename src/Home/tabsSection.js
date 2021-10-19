@@ -20,27 +20,24 @@ export default function () {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   return (
     <Flex
-      height="40vh"
+      height="48vh"
       background="main.darkRed"
       direction="row"
       width="60vw"
-      marginTop="80px"
+      marginTop="100px"
       padding="32px"
       borderRadius="md"
-      // onMouseOut={() => setCurrentImageIndex(undefined)}
     >
       <Flex flex="1" direction="column" justify="space-between" color="white">
         <Box
           onMouseOver={() => setCurrentImageIndex(0)}
           _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
-          width="80%"
+          width="30vw"
           padding="16px"
         >
-          <Text fontSize="24px" fontWeight="bold">
-            Security
-          </Text>
+          <Text textStyle="h2">Security</Text>
           {currentImageIndex == 0 ? (
-            <Text>
+            <Text textStyle="body">
               We use the latest encryption technology to secure and protect your
               data
             </Text>
@@ -51,14 +48,12 @@ export default function () {
         <Box
           onMouseOver={() => setCurrentImageIndex(1)}
           _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
-          width="80%"
+          width="30vw"
           padding="16px"
         >
-          <Text fontSize="24px" fontWeight="bold">
-            Flexibility
-          </Text>
+          <Text textStyle="h2">Flexibility</Text>
           {currentImageIndex == 1 ? (
-            <Text>
+            <Text textStyle="body">
               Whether its your bank account or social media account, we will
               safeguard your data and carry out your wishes
             </Text>
@@ -69,14 +64,14 @@ export default function () {
         <Box
           onMouseOver={() => setCurrentImageIndex(2)}
           _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
-          width="80%"
+          width="30vw"
           padding="16px"
         >
-          <Text fontSize="24px" fontWeight="bold">
-            Intention
-          </Text>
+          <Text textStyle="h2">Intention</Text>
           {currentImageIndex == 2 ? (
-            <Text>Choose who will gain access to your digital accounts</Text>
+            <Text textStyle="body">
+              Choose who will gain access to your digital accounts
+            </Text>
           ) : (
             ""
           )}
@@ -84,14 +79,12 @@ export default function () {
         <Box
           onMouseOver={() => setCurrentImageIndex(3)}
           _hover={{ bg: "main.purple", boxShadow: "xl", borderRadius: "md" }}
-          width="80%"
+          width="30vw"
           padding="16px"
         >
-          <Text fontSize="24px" fontWeight="bold">
-            Confidence
-          </Text>
+          <Text textStyle="h2">Confidence</Text>
           {currentImageIndex == 3 ? (
-            <Text>
+            <Text textStyle="body">
               Have the peace of mind that your digital accounts will be well
               taken care of
             </Text>
@@ -105,6 +98,7 @@ export default function () {
         borderRadius="md"
         boxShadow="xl"
         margin="16px"
+        width="30vw"
       />
     </Flex>
   );

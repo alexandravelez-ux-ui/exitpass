@@ -9,14 +9,22 @@ import {
   Box,
 } from "@chakra-ui/react";
 import logo from "./EXITPASS.svg";
-export default function () {
+import { HashLink as Link } from "react-router-hash-link";
+
+export default function (props) {
   return (
-    <Flex align="center" justify="space-around" width="100vw" direction="row">
-      <Image src={logo} width="200px" height="100px" />
-      <Text>Why ExitPass</Text>
-      <Text>How it Works</Text>
-      <Text>Pricing</Text>
-      <Text>Get Started</Text>
+    <Flex
+      align="center"
+      justify="space-around"
+      width="100vw"
+      direction="row"
+      {...props}
+    >
+      <Image src={logo} height="100%" />
+      {/* <Link to="/pathLink#yourAnchorTag"><Text textStyle="nav">Why ExitPass</Text></Link>
+      <Link to="/pathLink#yourAnchorTag"><Text textStyle="nav">How it Works</Text></Link>
+      <Link to="/pathLink#yourAnchorTag"><Text textStyle="nav">Pricing</Text></Link>
+      <Link to="/pathLink#yourAnchorTag"><Text textStyle="nav">Get Started</Text></Link> */}
     </Flex>
   );
 }
