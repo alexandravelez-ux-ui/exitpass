@@ -4,6 +4,7 @@ import Recipient from "./Recipient";
 import GetStarted from "./GetStarted";
 import CreateAccount from "./CreateAccount";
 import Home from "./Home";
+import Login from "./Login";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -58,6 +59,9 @@ export default function App() {
           </Route>
           <Route path="/create-account">
             <CreateAccount />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route exact path="/">
             <Home />
