@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Recipient from "./Recipient";
+import Recipient from "./RecipientOld";
 import GetStarted from "./GetStarted";
 import CreateAccount from "./CreateAccount";
 import Home from "./Home";
@@ -18,6 +18,7 @@ const theme = extendTheme({
       white: "#fff",
       grayDisabled: "#DCE0E5",
       purple: "#601659",
+      grayBackground: "#F8F7FB",
     },
   },
   fonts: {
@@ -40,6 +41,20 @@ const theme = extendTheme({
     nav: {
       fontSize: "21px",
       fontWeight: "semibold",
+    },
+    h3: {
+      fontSize: "16px",
+      fontWeight: "medium",
+    },
+  },
+  layerStyles: {
+    button: {
+      color: "#fff",
+      _hover: { bg: "#AE2735" },
+      bg: "#AE2735",
+      height: "56px",
+      borderRadius: "28px",
+      filter: "drop-shadow(0 6px 6px rgba(0, 0, 0, 0.30))",
     },
   },
 });

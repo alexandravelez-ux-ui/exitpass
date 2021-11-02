@@ -9,7 +9,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import TabSection from "./tabsSection";
-import Header from "../Header";
+import Header from "./Header";
 import trust from "./home-image.jpg";
 
 export default function () {
