@@ -1,9 +1,4 @@
-What's next?
--Fix sidebar transition
--Finish reverse hamburger menu animation 
+Note
+-Continue new recipient page
 
-Figma App Design
--..
--..
--..
-
+-
