@@ -16,19 +16,19 @@ import {
   WarningIcon,
   ChevronLeftIcon,
 } from "@chakra-ui/icons";
-import helpURL from "./help.png";
-import keyboardURL from "./keyboard.png";
-import mail2URL from "./mail2.png";
-import mailURL from "./mail.png";
-import meetingURL from "./meeting.png";
-import settingsURL from "./settings-gear.png";
-import subscriptionURL from "./subscription.png";
-import talkURL from "./talk.png";
-import videoURL from "./video.png";
-import websiteURL from "./website.png";
-import willURL from "./will.png";
-import sunset from "./sunset.jpg";
-import sunsetMask from "./sunsetMask.svg";
+// import helpURL from "../CreateAccount/help.png";
+// import keyboardURL from "./keyboard.png";
+import mail2URL from "../CreateAccount/mail2.png";
+// import mailURL from "./mail.png";
+import meetingURL from "../CreateAccount/meeting.png";
+// import settingsURL from "./settings-gear.png";
+// import subscriptionURL from "./subscription.png";
+import talkURL from "../CreateAccount/talk.png";
+import videoURL from "../CreateAccount/video.png";
+// import websiteURL from "./website.png";
+// import willURL from "./will.png";
+// import sunset from "./sunset.jpg";
+// import sunsetMask from "./sunsetMask.svg";
 
 const accountCategories = [
   {

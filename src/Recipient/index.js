@@ -1,7 +1,17 @@
 import react from "react";
-import { Flex, Circle, Image, Text, Button, chakra } from "@chakra-ui/react";
-import logoURL from "./exitpass-logo.png";
-import sunset from "./sunset.jpg";
+import {
+  Flex,
+  Circle,
+  Image,
+  Text,
+  Center,
+  Button,
+  chakra,
+  VStack,
+  Heading,
+} from "@chakra-ui/react";
+// import logoURL from "./exitpass-logo.png";
+import sunset from "../CreateAccount/sunset.jpg";
 import AccountCategories from "./AccountCategories";
 import AccountDetail from "./AccountDetail";
 
@@ -25,23 +35,26 @@ const accountDetails = [
 
 export default function () {
   return (
-    <Center marginTop={56}>
-        <VStack>
-        <Image
-            h="15vh"
-            w="100vw"
-            objectPosition="top right"
-            objectFit="cover"
-            src={sunset}
-            clipPath="inset(-40px -20px 0px -20px round 70px)"
-        />
-        <Text>Password Categories</Text>
-        <AccountCategories />
-        <Text>Email Accounts</Text>
-        {accountDetails.map((a) => (
+    <VStack>
+      <Image
+        h="15vh"
+        w="100vw"
+        objectPosition="top right"
+        objectFit="cover"
+        src={sunset}
+        clipPath="inset(-40px -20px 0px -20px round 70px)"
+      />
+
+      <Center>
+        <VStack marginTop="10" spacing="10" width="md">
+          <Heading size="2xl">Password Categories</Heading>
+          <AccountCategories />
+          <Heading size="lg">Email Accounts</Heading>
+          {accountDetails.map((a) => (
             <AccountDetail name={a.name} data={a.data} type={a.type} />
-        ))}
+          ))}
         </VStack>
-    </center> 
+      </Center>
+    </VStack>
   );
 }

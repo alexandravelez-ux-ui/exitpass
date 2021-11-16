@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Recipient from "./RecipientOld";
+import Recipient from "./Recipient";
 import GetStarted from "./GetStarted";
 import CreateAccount from "./CreateAccount";
 import Home from "./Home";
