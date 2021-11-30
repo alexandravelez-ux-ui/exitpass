@@ -9,7 +9,6 @@ import {
   InputGroup,
   InputLeftElement,
   chakra,
-  HStack,
   VStack,
 } from "@chakra-ui/react";
 import {
@@ -18,8 +17,8 @@ import {
   WarningIcon,
   ChevronLeftIcon,
 } from "@chakra-ui/icons";
-// import helpURL from "./help.png";
-// import keyboardURL from "./keyboard.png";s
+// import helpURL from "../CreateAccount/help.png";
+// import keyboardURL from "./keyboard.png";
 import mail2URL from "../CreateAccount/mail2.png";
 // import mailURL from "./mail.png";
 import meetingURL from "../CreateAccount/meeting.png";
@@ -32,7 +31,7 @@ import videoURL from "../CreateAccount/video.png";
 // import sunset from "./sunset.jpg";
 // import sunsetMask from "./sunsetMask.svg";
 
-const accountCategoriesOld = [
+const accountCategories = [
   {
     url: mail2URL,
     name: "Email",
@@ -51,31 +50,28 @@ const accountCategoriesOld = [
   },
 ];
 
-const accountCategories = {
-  Email: mail2URL,
-  Social: talkURL,
-  Bank: videoURL,
-  Shop: meetingURL,
-};
-
-export default function ({ name, data, type }) {
+export default function () {
   return (
-    <HStack
-      bg="gray.100"
-      bheight="200px"
-      width="md"
-      borderRadius="2xl"
-      spacing={5}
-      padding="5"
-    >
-      <Circle bg="white" boxShadow="md" size="60px">
-        <Image src={accountCategories[type]}></Image>
-      </Circle>
-      <VStack align="left">
-        <Text textStyle="h3">{name}</Text>
-        <Text textStyle="body">{data}</Text>
-        <Text textStyle="body">*********</Text>
-      </VStack>
-    </HStack>
+    <VStack width="110%" bg="gray.100" borderRadius="2xl" padding="30px">
+      <Text alignSelf="flex-start" textStyle="nav">
+        Password Categories
+      </Text>
+      <Flex mt="16px" width="100%" justify="space-between" direction="row">
+        {accountCategories.map(({ url, name }) => (
+          <Flex align="center" direction="column">
+            <Circle
+              size="56px"
+              bg="white"
+              filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))"
+            >
+              <Image src={url} />
+            </Circle>
+            <Text mt="8px" fontSize="12px" fontWeight="medium">
+              {name}
+            </Text>
+          </Flex>
+        ))}
+      </Flex>
+    </VStack>
   );
 }

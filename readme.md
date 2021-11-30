@@ -1,4 +1,2 @@
-Note
--Continue new recipient page, refine typography and spacing
-
--
+Notes
+-We're continuing to work on beneficiary page

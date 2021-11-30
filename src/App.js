@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Recipient from "./Recipient";
+import ListAccounts from "./ListAccounts";
 import GetStarted from "./GetStarted";
 import CreateAccount from "./CreateAccount";
 import Home from "./Home";
@@ -35,7 +35,7 @@ const theme = extendTheme({
       fontWeight: "semibold",
     },
     body: {
-      fontSize: "21px",
+      fontSize: "22px",
       fontWeight: "normal",
     },
     nav: {
@@ -64,10 +64,8 @@ export default function App() {
     <ChakraProvider theme={theme}>
       <Router>
         <Switch>
-          <Route path="/recipient">
-            <div className="jost-font">
-              <Recipient />
-            </div>
+          <Route path="/list-accounts">
+            <ListAccounts />
           </Route>
           <Route path="/get-started">
             <GetStarted />

@@ -47,9 +47,10 @@ export default function () {
 
       <Center>
         <VStack marginTop="10" spacing="10" width="md">
-          <Heading size="2xl">Password Categories</Heading>
           <AccountCategories />
-          <Heading size="lg">Email Accounts</Heading>
+          <Text alignSelf="flex-start" textStyle="nav">
+            Email Accounts
+          </Text>
           {accountDetails.map((a) => (
             <AccountDetail name={a.name} data={a.data} type={a.type} />
           ))}

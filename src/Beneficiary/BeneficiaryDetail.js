@@ -9,6 +9,8 @@ import {
   InputGroup,
   InputLeftElement,
   chakra,
+  HStack,
+  VStack,
 } from "@chakra-ui/react";
 import {
   PhoneIcon,
@@ -16,8 +18,8 @@ import {
   WarningIcon,
   ChevronLeftIcon,
 } from "@chakra-ui/icons";
-// import helpURL from "../CreateAccount/help.png";
-// import keyboardURL from "./keyboard.png";
+// import helpURL from "./help.png";
+// import keyboardURL from "./keyboard.png";s
 import mail2URL from "../CreateAccount/mail2.png";
 // import mailURL from "./mail.png";
 import meetingURL from "../CreateAccount/meeting.png";
@@ -30,7 +32,7 @@ import videoURL from "../CreateAccount/video.png";
 // import sunset from "./sunset.jpg";
 // import sunsetMask from "./sunsetMask.svg";
 
-const accountCategories = [
+const accountCategoriesOld = [
   {
     url: mail2URL,
     name: "Email",
@@ -49,23 +51,27 @@ const accountCategories = [
   },
 ];
 
-export default function () {
+const accountCategories = {
+  Email: mail2URL,
+  Social: talkURL,
+  Bank: videoURL,
+  Shop: meetingURL,
+};
+
+export default function ({ editing, email, status }) {
   return (
-    <Flex mt="16px" width="100%" justify="space-between" direction="row">
-      {accountCategories.map(({ url, name }) => (
-        <Flex align="center" direction="column">
-          <Circle
-            size="56px"
-            bg="white"
-            filter="drop-shadow(0 3px 0.20rem rgba(0, 0, 0, .16))"
-          >
-            <Image src={url} />
-          </Circle>
-          <Text mt="8px" fontSize="12px" fontWeight="medium">
-            {name}
-          </Text>
-        </Flex>
-      ))}
-    </Flex>
+    <HStack bg="gray.100" width="md" borderRadius="2xl" spacing={5} padding="5">
+      {editing ? (
+        <>
+          <Text>Email</Text>
+          <Input />
+        </>
+      ) : (
+        <>
+          <Text>{email}</Text>
+          <Text>{status}</Text>
+        </>
+      )}
+    </HStack>
   );
 }
