@@ -17,6 +17,7 @@ import {
   AddIcon,
   WarningIcon,
   ChevronLeftIcon,
+  CloseIcon,
 } from "@chakra-ui/icons";
 // import helpURL from "./help.png";
 // import keyboardURL from "./keyboard.png";s
@@ -58,17 +59,18 @@ const accountCategories = {
   Shop: meetingURL,
 };
 
-export default function ({ editing, email, status }) {
+export default function ({ editing, email, status, onChange, onDelete }) {
   return (
     <HStack bg="gray.100" width="md" borderRadius="2xl" spacing={5} padding="5">
       {editing ? (
         <>
           <Text>Email</Text>
-          <Input />
+          <Input onBlur={onChange} />
         </>
       ) : (
         <>
-          <Text>{email}</Text>
+          <CloseIcon onClick={() => onDelete(email)} />
+          <Text flex="1">{email}</Text>
           <Text>{status}</Text>
         </>
       )}

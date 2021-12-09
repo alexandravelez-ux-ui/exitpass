@@ -7,6 +7,7 @@ import Home from "./Home";
 import Login from "./Login";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Beneficiary from "./Beneficiary";
 
 const theme = extendTheme({
   colors: {
@@ -78,6 +79,9 @@ export default function App() {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/beneficiary">
+            <Beneficiary />
           </Route>
         </Switch>
       </Router>
