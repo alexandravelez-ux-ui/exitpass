@@ -14,37 +14,32 @@ import {
 import sunset from "../CreateAccount/sunset.jpg";
 import BeneficiaryDetail from "./BeneficiaryDetail";
 
-const beneficiaries = [
+const recipients = [
   {
-    email: "jenniferwise@gmail.com",
+    name: "Jennifer Wise",
+    status: "inactive",
+  },
+  {
+    name: "Jennifer Wiser",
     status: "active",
   },
   {
-    email: "jenniferwise@gmail.com",
-    status: "pending",
-  },
-  {
-    email: "jenniferwise@gmail.com",
-    status: "pending",
+    name: "Jennifer Wisest",
+    status: "inactive",
   },
 ];
 
 export default function () {
   const [isEditing, setIsEditing] = useState(false);
   const [hasUpdated, setHasUpdated] = useState(0);
-  const addBeneficary = (email) => {
-    const newBeneficiary = {
-      email,
-      status: "pending",
-    };
-    beneficiaries.push(newBeneficiary);
-    setIsEditing(false);
-  };
   const onDelete = (email) => {
-    const matching = beneficiaries.findIndex((b) => b?.email == email);
-    delete beneficiaries[matching];
-    setHasUpdated(hasUpdated + 1);
+    // const matching = recipients.findIndex((b) => b?.email == email);
+    // delete recipients[matching];
+    // setHasUpdated(hasUpdated + 1);
   };
+
+  const inActiveRecipients = recipients.filter((a) => a.status == "inactive");
+  const activeRecipients = recipients.filter((a) => a.status == "active");
 
   return (
     <VStack>
@@ -59,25 +54,30 @@ export default function () {
 
       <Center>
         <VStack marginTop="10" spacing="10" width="md">
-          {beneficiaries.map((a) => (
-            <BeneficiaryDetail
-              editing={false}
-              status={a.status}
-              email={a.email}
-              onDelete={onDelete}
-            />
-          ))}
-          {isEditing ? (
-            <BeneficiaryDetail
-              onChange={(e) => addBeneficary(e.target.value)}
-              editing={true}
-            />
+          {activeRecipients.length ? (
+            <>
+              <Text>Active Recipients</Text>
+              {activeRecipients.map((a) => (
+                <BeneficiaryDetail
+                  active={true}
+                  name={a.name}
+                  onDelete={onDelete}
+                />
+              ))}
+            </>
           ) : (
             ""
           )}
-          <Circle bg="gray.100">
-            <Button onClick={setIsEditing}>+</Button>
-          </Circle>
+          {inActiveRecipients.length ? (
+            <>
+              <Text>Inactive Recipients</Text>
+              {inActiveRecipients.map((a) => (
+                <BeneficiaryDetail name={a.name} onDelete={onDelete} />
+              ))}
+            </>
+          ) : (
+            ""
+          )}
         </VStack>
       </Center>
     </VStack>

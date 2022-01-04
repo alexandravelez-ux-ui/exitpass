@@ -59,23 +59,20 @@ const accountCategories = {
   Shop: meetingURL,
 };
 
-export default function ({ name, onDelete, active }) {
+export default function ({ editing, email, status, onChange, onDelete }) {
   return (
-    <HStack
-      justify="space-between"
-      bg="gray.100"
-      width="md"
-      borderRadius="2xl"
-      spacing={5}
-      padding="5"
-    >
-      <Text>{name}</Text>
-      {active ? (
-        <Button bg="main.redOrange" color="white">
-          Access Accounts
-        </Button>
+    <HStack bg="gray.100" width="md" borderRadius="2xl" spacing={5} padding="5">
+      {editing ? (
+        <>
+          <Text>Email</Text>
+          <Input onBlur={onChange} />
+        </>
       ) : (
-        ""
+        <>
+          <CloseIcon onClick={() => onDelete(email)} />
+          <Text flex="1">{email}</Text>
+          <Text>{status}</Text>
+        </>
       )}
     </HStack>
   );
