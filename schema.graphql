@@ -1,0 +1,57 @@
+type BankAccount {
+  login: String!
+  password: String!
+  recipient: Recipient!
+}
+
+type SocialMedia {
+  login: String!
+  password: String!
+  recipient: Recipient!
+}
+
+type OnlineShopping {
+  login: String!
+  password: String!
+  recipient: Recipient!
+}
+
+type SubscriptionAccount {
+  login: String!
+  password: String!
+  recipient: Recipient!
+}
+
+type Electronic {
+  login: String!
+  password: String!
+  recipient: Recipient!
+}
+
+type CloudStorage {
+  login: String!
+  password: String!
+  recipient: Recipient!
+}
+
+type Crypto {
+  key: String!
+  recipient: Recipient!
+}
+
+type Beneficiary {
+  email: String!
+  password: String!
+  recipient: Recipient! @relation
+}
+
+type Recipient {
+  email: String!
+  password: String!
+  beneficiary: Beneficiary! @relation
+  bankAccounts: [BankAccount]! @relation
+  electronics: [Electronic]! @relation
+  onlineStores: [OnlineShopping]! @relation
+  socialMediaAccounts: [SocialMedia]! @relation
+  subscriptionAccounts: [SubscriptionAccount]! @relation
+}

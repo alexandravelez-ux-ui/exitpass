@@ -1,3 +1,9 @@
+Next
+
+-- Create graphql mutations and queries
+
+---
+
 Notes
 
 -Beneficiary: recipient active or inactive, for beneficiary
@@ -14,3 +20,5 @@ Notes
 -Create Account Flow
 -Account Management Page
 -Legal Pages (TOS/PP)
+
+---

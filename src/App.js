@@ -9,6 +9,21 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BeneficiaryList from "./BeneficiaryList";
 import Beneficiary from "./Beneficiary";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql,
+} from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://graphql.fauna.com/graphql",
+  headers: {
+    authorization: `Bearer ${process.env.REACT_APP_FAUNA_SECRET}`,
+  },
+  cache: new InMemoryCache(),
+});
 
 const theme = extendTheme({
   colors: {
@@ -63,32 +78,34 @@ const theme = extendTheme({
 
 export default function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Router>
-        <Switch>
-          <Route path="/list-accounts">
-            <ListAccounts />
-          </Route>
-          <Route path="/get-started">
-            <GetStarted />
-          </Route>
-          <Route path="/create-account">
-            <CreateAccount />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/beneficiary-list">
-            <BeneficiaryList />
-          </Route>
-          <Route path="/beneficiary">
-            <Beneficiary />
-          </Route>
-        </Switch>
-      </Router>
-    </ChakraProvider>
+    <ApolloProvider client={client}>
+      <ChakraProvider theme={theme}>
+        <Router>
+          <Switch>
+            <Route path="/list-accounts">
+              <ListAccounts />
+            </Route>
+            <Route path="/get-started">
+              <GetStarted />
+            </Route>
+            <Route path="/create-account">
+              <CreateAccount />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/beneficiary-list">
+              <BeneficiaryList />
+            </Route>
+            <Route path="/beneficiary">
+              <Beneficiary />
+            </Route>
+          </Switch>
+        </Router>
+      </ChakraProvider>
+    </ApolloProvider>
   );
 }
